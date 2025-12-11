@@ -21,7 +21,9 @@ RUN apt update && \
     apt autoremove -y && apt autoclean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/log/*
 
 # COPY ./utils/vit-b-16.img.fp32.onnx ./utils/vit-b-16.img.fp32.onnx
+ADD https://github.com/MT-Photos/mt-photos-ai/releases/download/v1.1.0/vit-b-16.img.fp32.onnx ./utils/
 # COPY ./utils/vit-b-16.txt.fp32.onnx ./utils/vit-b-16.txt.fp32.onnx
+ADD https://github.com/MT-Photos/mt-photos-ai/releases/download/v1.1.0/vit-b-16.txt.fp32.onnx ./utils/
 COPY ./utils/bert_tokenizer.py ./utils/bert_tokenizer.py
 COPY ./utils/vocab.txt ./utils/vocab.txt
 COPY ./utils/clip.py ./utils/clip.py
