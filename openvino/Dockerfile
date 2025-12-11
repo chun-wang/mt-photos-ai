@@ -31,6 +31,8 @@ COPY server.py .
 
 ENV NO_ALBUMENTATIONS_UPDATE=1
 ENV API_AUTH_KEY=mt_photos_ai_extra
+ENV RECOGNITION_MODEL=buffalo_l
+ENV DETECTION_THRESH=0.65
 EXPOSE 8060
 
 VOLUME ["/root/.insightface/models"]
