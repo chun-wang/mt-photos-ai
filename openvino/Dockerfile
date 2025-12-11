@@ -25,12 +25,14 @@ COPY ./utils/vit-b-16.txt.fp32.onnx ./utils/vit-b-16.txt.fp32.onnx
 COPY ./utils/bert_tokenizer.py ./utils/bert_tokenizer.py
 COPY ./utils/vocab.txt ./utils/vocab.txt
 COPY ./utils/clip.py ./utils/clip.py
-COPY ./_insightface_root /root/.insightface
+# COPY ./_insightface_root /root/.insightface
 
 COPY server.py .
 
 ENV NO_ALBUMENTATIONS_UPDATE=1
 ENV API_AUTH_KEY=mt_photos_ai_extra
 EXPOSE 8060
+
+VOLUME ["/root/.insightface/models"]
 
 CMD [ "python3", "/app/server.py" ]
